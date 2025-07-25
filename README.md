@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # TuPrimeraPaginaGaldeano
 
 Sistema de registro de licitaciones mineras desarrollado en Django como **entrega final del curso de Python en Coderhouse**.
@@ -45,3 +46,6 @@ Cada licitación puede tener múltiples ofertas asociadas. El sistema está orie
 ```bash
 git clone https://github.com/fedegaldeano/TuPrimeraPaginaGaldeano.git
 cd TuPrimeraPaginaGaldeano
+=======
+# EntregaFinal
+>>>>>>> 5a073aa6be489d0b5e2ef900f39cc95a4c9519e4
