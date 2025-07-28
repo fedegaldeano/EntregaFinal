@@ -1,50 +1,58 @@
 # TuPrimeraPaginaGaldeano
 
-Sistema de registro de licitaciones mineras desarrollado en Django como **entrega final del curso de Python en Coderhouse**.
+Sistema web de gestión de licitaciones mineras, desarrollado en **Django 5.2** como entrega final del curso de **Python en Coderhouse**.
 
 ---
 
 ## 📌 Descripción general
 
-Este sistema permite registrar empresas licitantes y licitadores interesados en participar de licitaciones mineras, cubriendo todas las fases del ciclo de vida de un proyecto: **proyecto, construcción, operación y cierre**.
+Esta plataforma permite registrar y gestionar empresas licitantes, licitadores y sus ofertas a licitaciones mineras. Además, incorpora funcionalidades de blog (noticias/páginas) y mensajería privada entre usuarios autenticados.
 
-Cada licitación puede tener múltiples ofertas asociadas. El sistema está orientado tanto a la gestión administrativa como a la visualización de oportunidades para los licitadores.
+El sistema cubre todas las fases del ciclo de vida de un proyecto minero: **proyecto, construcción, operación y cierre**.
 
 ---
 
 ## 🧱 Estructura del proyecto
 
-- `EmpresaLicitante`: modelo para gestionar empresas proveedoras de bienes o servicios.
-- `Licitador`: modelo para registrar empresas que desean postularse a licitaciones.
-- `Licitacion`: modelo central donde se definen las convocatorias abiertas.
-- `Oferta`: modelo para registrar la postulación de un licitador a una licitación específica.
+- `EmpresaLicitante`: empresas proveedoras que ofrecen servicios o productos.
+- `Licitador`: usuarios o empresas que se postulan a las licitaciones.
+- `Licitacion`: convocatorias abiertas publicadas por empresas licitantes.
+- `Oferta`: solicitudes enviadas por los licitadores para participar.
+- `pages`: app tipo blog para publicar contenido informativo o institucional.
+- `messenger`: sistema de mensajería privada entre usuarios registrados.
+- `accounts`: gestión de usuarios, login, logout, perfil y registro.
 
 ---
 
 ## 💡 Funcionalidades implementadas
 
 ### 🧾 Gestión de datos
-- Alta, edición y eliminación de empresas licitantes, licitadores, licitaciones y ofertas mediante formularios.
-- Listado y búsqueda de licitaciones disponibles.
-- Postulación a licitaciones con vinculación automática entre oferta, licitación y licitador.
-- Herencia de plantillas HTML.
-- CRUD completo para todas las entidades.
+- CRUD completo para empresas licitantes, licitadores, licitaciones y ofertas.
+- Herencia de plantillas HTML (`base.html`) y navegación con navbar.
+- Buscador de licitaciones disponibles por nombre, descripción o estado.
+- Vinculación automática entre ofertas, licitaciones y usuarios.
 
-### 👤 Funcionalidades de usuarios
-- Registro de nuevos usuarios.
-- Login y logout.
-- Vista de perfil con edición de datos.
+### 📝 Blog institucional
+- Creación, edición, detalle y eliminación de páginas.
+- Interfaz amigable para publicaciones informativas.
+
+### 💬 Mensajería entre usuarios
+- Envío de mensajes entre usuarios autenticados.
+- Listado de conversaciones y mensajes.
+- Acceso directo desde el menú de navegación.
+
+### 👤 Usuarios y autenticación
+- Registro, login y logout.
+- Edición del perfil del usuario.
 - Cambio de contraseña.
+- Vista condicional del menú según autenticación.
 
 ---
 
-## 🧪 ¿Cómo probar el proyecto?
+## 🚀 ¿Cómo probar el proyecto?
 
-1. **Clonar el repositorio:**
+1. **Clonar el repositorio**
 
 ```bash
 git clone https://github.com/fedegaldeano/TuPrimeraPaginaGaldeano.git
 cd TuPrimeraPaginaGaldeano
-=======
-# EntregaFinal
->>>>>>> 5a073aa6be489d0b5e2ef900f39cc95a4c9519e4
