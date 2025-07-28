@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Tu Primera Página{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <!-- NAVBAR -->
+    <nav>
+        <ul>
+            <li><a href="{% url 'home' %}">Inicio</a></li>
+            <li><a href="{% url 'about' %}">Acerca de mí</a></li>
+            <li><a href="{% url 'pages:list' %}">Páginas</a></li>
+
+            {% if user.is_authenticated %}
+                <li><a href="{% url 'accounts:profile' %}">Perfil</a></li>
+                <li><a href="{% url 'logout' %}">Salir</a></li>
+            {% else %}
+                <li><a href="{% url 'login' %}">Ingresar</a></li>
+                <li><a href="{% url 'accounts:signup' %}">Registrarse</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+
+    <hr>
+
+    <!-- CONTENIDO -->
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+</body>
+</html>

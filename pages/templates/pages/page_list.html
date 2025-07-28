@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Páginas publicadas</h2>
+  {% if pages %}
+    <ul>
+      {% for page in pages %}
+        <li>
+          <h3>{{ page.titulo }}</h3>
+          <p>{{ page.subtitulo }}</p>
+          <a href="{% url 'pages:detail' page.pk %}">Leer más</a>
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>No hay páginas aún.</p>
+  {% endif %}
+{% endblock %}

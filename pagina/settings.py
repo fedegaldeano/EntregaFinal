@@ -18,6 +18,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'licitaciones',  # Tu app
+    'accounts',
+    'pages',
+    'ckeditor',
+    'messenger'
 ]
 
 MIDDLEWARE = [

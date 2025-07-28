@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # TuPrimeraPaginaGaldeano
 
 Sistema de registro de licitaciones mineras desarrollado en Django como **entrega final del curso de Python en Coderhouse**.
