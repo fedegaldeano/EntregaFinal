@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %}Iniciar sesión{% endblock %}
+{% block content %}
+<h2>Iniciar sesión</h2>
+
+{% if form.errors or form.non_field_errors %}
+  <ul style="color:red;">
+    {% for field, errors in form.errors.items %}
+      {% for e in errors %}<li>{{ field }}: {{ e }}</li>{% endfor %}
+    {% endfor %}
+    {% for e in form.non_field_errors %}<li>{{ e }}</li>{% endfor %}
+  </ul>
+{% endif %}
+
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Ingresar</button>
+</form>
+
+<p>¿No tenés cuenta? <a href="{% url 'signup' %}">Registrate</a></p>
+{% endblock %}

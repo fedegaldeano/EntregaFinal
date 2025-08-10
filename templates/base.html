@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>{% block title %}Entrega Final{% endblock %}</title>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+  <nav>
+    <a href="{% url 'home' %}">Home</a>
+    <a href="{% url 'about' %}">About</a>
+    <a href="{% url 'page_list' %}">Pages</a>
+
+    {% if user.is_authenticated %}
+      <a href="{% url 'page_create' %}">Crear página</a>
+      <a href="{% url 'profile' %}">Perfil</a>
+      <a href="{% url 'logout' %}">Salir</a>
+      <a href="{% url 'inbox' %}">Mensajes</a>
+    {% else %}
+      <a href="{% url 'login' %}">Ingresar</a>
+      <a href="{% url 'signup' %}">Registrarse</a>
+    {% endif %}
+
+  </nav>
+
+  {% if messages %}
+    <ul class="messages">
+      {% for m in messages %}<li>{{ m }}</li>{% endfor %}
+    </ul>
+  {% endif %}
+
+  <hr>
+  {% block content %}{% endblock %}
+</body>
+</html>

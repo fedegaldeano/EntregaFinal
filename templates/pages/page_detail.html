@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block title %}{{ object.titulo }}{% endblock %}
+{% block content %}
+<h1>{{ object.titulo }}</h1>
+<p><em>{{ object.subtitulo }}</em></p>
+<p>Publicado: {{ object.fecha_publicacion }}</p>
+
+{% if object.imagen %}
+  <p><img src="{{ object.imagen.url }}" alt="imagen" style="max-width:400px"></p>
+{% endif %}
+
+<div>{{ object.contenido|safe }}</div>
+
+{% if user.is_authenticated %}
+  <p style="margin-top:1rem;">
+    <a href="{% url 'page_update' object.pk %}">Editar</a> |
+    <a href="{% url 'page_delete' object.pk %}">Borrar</a>
+  </p>
+{% endif %}
+{% endblock %}
