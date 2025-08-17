@@ -4,9 +4,10 @@ from .views import SignUpView, profile_view, profile_edit, MyPasswordChangeView
 
 urlpatterns = [
     path('login/',  auth_views.LoginView.as_view(template_name='accounts/login.html'), name='login'),
+    # Logout por POST (desde el formulario en base.html). Redirige según LOGOUT_REDIRECT_URL.
     path('logout/', auth_views.LogoutView.as_view(), name='logout'),
-    path('signup/', SignUpView.as_view(), name='signup'),
 
+    path('signup/', SignUpView.as_view(), name='signup'),
     path('profile/', profile_view, name='profile'),
     path('profile/edit/', profile_edit, name='profile_edit'),
     path('password/change/', MyPasswordChangeView.as_view(), name='password_change'),

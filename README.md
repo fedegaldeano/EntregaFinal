@@ -33,6 +33,5 @@ python manage.py runserver
 /messenger/       -> inbox  
 /messenger/nuevo/ -> enviar mensaje
 
-## Notas
-- No subir `db.sqlite3` ni la carpeta `media/` al repositorio.
-- Imágenes de usuario y páginas se guardan en `/media/…` en desarrollo.
+## Video explicativo
+https://drive.google.com/drive/folders/1vkvVqwZ-ZxyfJio6QacQW9l37LcHzxI5?usp=sharing
